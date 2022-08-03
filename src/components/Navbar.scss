@@ -1,0 +1,41 @@
+.a-navbar {
+  width: 100%;
+  height: 75px;
+  background-color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding-right: 3rem;
+  float: right;
+
+  ul {
+    display: flex;
+    gap: 3rem;
+    list-style-type: none;
+
+    li {
+      cursor: pointer;
+
+      .link {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      span {
+        font-size: 32px;
+      }
+      div {
+        width: 0;
+        height: 2px;
+        background-color: black;
+        transition: width ease-in-out 500ms;
+      }
+
+      &:hover {
+        div {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
