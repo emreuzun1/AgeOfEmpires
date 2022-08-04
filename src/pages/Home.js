@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { getUnits } from "../rxutils/actions/units";
 import Navbar from "../components/Navbar";
 import "../App.scss";
 
 const Home = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getUnits());
+  }, []);
   return (
     <>
       <Navbar />

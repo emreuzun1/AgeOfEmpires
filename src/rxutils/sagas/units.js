@@ -3,8 +3,9 @@ import { getUnitsFromJson } from "../../lib/api";
 
 function* getUnits() {
   try {
-    const { units } = yield call(getUnitsFromJson);
-    console.log(units);
+    const units = yield call(getUnitsFromJson);
+    const res = yield units.json();
+    yield put({ type: "UNITS_GET_SUCCESS", payload: res });
   } catch (err) {
     console.log(err);
   }
