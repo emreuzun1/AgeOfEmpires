@@ -10,10 +10,12 @@ export default (state = initialState, action) =>
     switch (action.type) {
       case "UNITS_GET_REQUEST": {
         draft.loading = true;
+        break;
       }
       case "UNITS_GET_SUCCESS": {
         draft.loading = false;
         draft.units = action.payload;
+        break;
       }
     }
   });

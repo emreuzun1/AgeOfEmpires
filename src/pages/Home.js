@@ -13,7 +13,11 @@ const Home = () => {
     <>
       <Navbar />
       <div className="img-container">
-        <img src={require("../assets/680254.jpg")} className="img" />
+        <img
+          src={require("../assets/680254.jpg")}
+          className="img"
+          data-testid="wallpaper"
+        />
       </div>
     </>
   );

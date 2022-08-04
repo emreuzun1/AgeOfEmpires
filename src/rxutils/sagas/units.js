@@ -11,6 +11,8 @@ function* getUnits() {
   }
 }
 
-const unitsSaga = [takeLatest("UNITS_GET_REQUEST", getUnits)];
+const unitsSaga = [
+  takeLatest("UNITS_GET_REQUEST", getUnits),
+];
 
 export default unitsSaga;
