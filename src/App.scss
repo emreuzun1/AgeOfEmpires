@@ -105,3 +105,23 @@
     }
   }
 }
+
+.detail {
+  padding: 3rem;
+  ul {
+    list-style-type: none;
+    li {
+      gap: 2rem;
+      display: flex;
+      .key,
+      .value {
+        width: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+        padding: 1rem 0;
+      }
+    }
+  }
+}
