@@ -4,7 +4,7 @@ import "./Navbar.scss";
 
 const Navbar = () => {
   return (
-    <div className="a-navbar">
+    <div className="a-navbar" data-testid="navbar">
       <ul>
         <li>
           <Link to="/" className="link">

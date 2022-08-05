@@ -1,13 +1,14 @@
-import React, { useMemo, useState } from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect, useMemo, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
 
 import "../App.scss";
 import Navbar from "../components/Navbar";
-import { selectUnit } from "../rxutils/actions/units";
+import { getUnits, selectUnit } from "../rxutils/actions/units";
 
 const Units = () => {
+  const dispatch = useDispatch();
   const { units, loading } = useSelector((state) => state.units);
   const [wood, setWood] = useState({
     name: "Wood",
@@ -30,6 +31,10 @@ const Units = () => {
   if (!units) {
     return <div>Loading...!</div>;
   }
+
+  useEffect(() => {
+    dispatch(getUnits());
+  }, []);
 
   const filterAge = (string) => {
     document.getElementById(ageType).classList.toggle("active");

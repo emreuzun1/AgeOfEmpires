@@ -1,19 +1,22 @@
 /* eslint-disable react/react-in-jsx-scope */
-import { render, screen, cleanup } from "@testing-library/react";
+import { render, cleanup } from "@testing-library/react";
 import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router-dom";
 import { store } from "./rxutils/store";
-import App from "./App";
+import Home from "./pages/Home";
+import { BrowserRouter } from "react-router-dom";
 
 afterEach(cleanup);
 
-test("renders image in home page", () => {
-  const { queryByTestId } = render(
-    <Provider store={store}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </Provider>
-  );
-  expect(queryByTestId("wallpaper")).toBeInTheDocument();
+describe("Tests for Age Of Empires", () => {
+  test("check for renders image and navigation bar in home page", async () => {
+    const { getByTestId } = render(
+      <Provider store={store}>
+        <BrowserRouter>
+          <Home />
+        </BrowserRouter>
+      </Provider>
+    );
+    expect(getByTestId("wallpaper")).toBeInTheDocument();
+    expect(getByTestId("navbar")).toBeInTheDocument();
+  });
 });
