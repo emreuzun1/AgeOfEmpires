@@ -1,7 +1,7 @@
 import { put, call, takeLatest } from "redux-saga/effects";
 import { getUnitsFromJson } from "../../lib/api";
 
-function* getUnits() {
+export function* getUnits() {
   try {
     const units = yield call(getUnitsFromJson);
     const res = yield units.json();
